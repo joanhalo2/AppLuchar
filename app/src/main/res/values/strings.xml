@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AppLuchar</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_register_report">RegisterReportActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="my_toolbar_title">Welcome User </string>
+    <string name="my_tb_subtitle">Bienvenido/a</string>
+    <string name="menu_1">Menu1</string>
+    <string name="menu_2">Menu2</string>
+    <string name="menu_3">Log Out</string>
+    <string name="title_activity_report">ReportActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="hh_rr">HHRR</string>
+    <string name="report_resources">Resources</string>
+    <string name="register_succesfull">Registered Successfully</string>
+    <string name="register_failed">Could not register. PLease try again</string>
+    <string name="location_msg">Location!</string>
+    <string name="saving_report">Saving New Report ...</string>
+</resources>
