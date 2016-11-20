@@ -140,25 +140,27 @@ public class AccountActivity extends AppCompatActivity {
             Map<String,Object> map = (Map)dataSnapshot.getValue();
 
             String u_id  = (String) map.get("userID");
-
             String location = (String) map.get("location");
+            String place = (String) map.get("place");
             String actors = (String) map.get("actors");
             String type = (String) map.get("type");
-            int attendees = new Long((Long) map.get("attendees")).intValue();
             String section = (String) map.get("section");
-            String status = (String) map.get("status");
             String dateTime = (String) map.get("date");
+            String tags = (String) map.get("tags");
+            String desc = (String) map.get("desc");
+            String username = (String) map.get("username");
 
             Report rescuedReport = new Report(
                     u_id,
                     location,
+                    place,
                     actors,
                     type,
-                    attendees,
                     section,
-                    status,
-                    dateTime
-
+                    dateTime,
+                    tags,
+                    desc,
+                    username
             );
 
             rescuedReport.setReportID(reportID);

@@ -19,12 +19,15 @@ public class Report implements Parcelable{
     public String reportID;
     public String userID;
     public String location;
+    public String place;
     public String actors;
     public String type;
-    public int attendees;
     public String section;
-    public String status;
     public String date;
+    public String tags;
+    public String description;
+    public String userName;
+
 
 
     public Report(){
@@ -35,23 +38,40 @@ public class Report implements Parcelable{
         this.reportID = input.readString();
         this.userID = input.readString();
         this.location = input.readString();
+        this.place = input.readString();
         this.actors = input.readString();
         this.type = input.readString();
-        this.attendees = input.readInt();
         this.section = input.readString();
-        this.status = input.readString();
         this.date = input.readString();
+        this.tags = input.readString();
+        this.description = input.readString();
+        this.userName = input.readString();
     }
 
-    public Report(String userID, String location, String actors, String type, int attendees, String section, String status, String date) {
+    public Report(String userID, String location, String place, String actors, String type, String section, String date,String tags,String desc,String userName) {
         this.userID = userID;
         this.location = location;
+        this.place = place;
         this.actors = actors;
         this.type = type;
-        this.attendees = attendees;
         this.section = section;
-        this.status = status;
         this.date = date;
+        this.tags = tags;
+        this.description = desc;
+        this.userName = userName;
+    }
+
+    public void updateFields(String userID, String location, String place, String actors, String type, String section, String date,String tags,String desc,String userName){
+        this.userID = userID;
+        this.location = location;
+        this.place = place;
+        this.actors = actors;
+        this.type = type;
+        this.section = section;
+        this.date = date;
+        this.tags = tags;
+        this.description = desc;
+        this.userName = userName;
     }
 
     @Exclude
@@ -59,13 +79,14 @@ public class Report implements Parcelable{
         HashMap<String, Object> result = new HashMap<>();
         result.put("userID", userID);
         result.put("location", location);
+        result.put("place", place);
         result.put("actors", actors);
         result.put("type", type);
-        result.put("attendees", attendees);
         result.put("section", section);
-        result.put("status", status);
         result.put("date", date);
-
+        result.put("tags", tags);
+        result.put("desc", description);
+        result.put("username", userName);
         return result;
     }
 
@@ -101,13 +122,6 @@ public class Report implements Parcelable{
         this.type = type;
     }
 
-    public int getAttendees() {
-        return attendees;
-    }
-
-    public void setAttendees(int attendees) {
-        this.attendees = attendees;
-    }
 
     public String getSection() {
         return section;
@@ -115,14 +129,6 @@ public class Report implements Parcelable{
 
     public void setSection(String section) {
         this.section = section;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getDate() {
@@ -140,6 +146,37 @@ public class Report implements Parcelable{
     public void setReportID(String reportID) {
         this.reportID = reportID;
     }
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
 
     @Override
@@ -153,13 +190,14 @@ public class Report implements Parcelable{
         dest.writeString(reportID);
         dest.writeString(userID);
         dest.writeString(location);
+        dest.writeString(place);
         dest.writeString(actors);
         dest.writeString(type);
-        dest.writeInt(attendees);
         dest.writeString(section);
-        dest.writeString(status);
         dest.writeString(date);
-
+        dest.writeString(tags);
+        dest.writeString(description);
+        dest.writeString(userName);
 
     }
 

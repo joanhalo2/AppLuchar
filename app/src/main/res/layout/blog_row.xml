@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="wrap_content"
-     android:layout_margin="20dp">
+    android:layout_margin="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,19 +11,57 @@
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="125dp"
-            android:id="@+id/postImage"
-            app:srcCompat="@android:drawable/ic_menu_gallery"
-            android:scaleType="fitCenter"
-            android:layout_gravity="top|left|fill_horizontal"
-            android:adjustViewBounds="true" />
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="63dp"
+                android:id="@+id/postImage"
+                app:srcCompat="@android:drawable/ic_menu_mapmode"
+                android:scaleType="fitCenter"
+                android:layout_gravity="top|left|fill_horizontal"
+                android:adjustViewBounds="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postLabelUser"
+                android:text="Creado Por:"
+                android:textSize="8sp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_below="@+id/postDate"
+                android:layout_alignLeft="@+id/postCategory"
+                android:layout_alignStart="@+id/postCategory" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postUser"
+                android:text="Username"
+                android:textStyle="bold"
+                android:textSize="8sp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:layout_below="@+id/postLabelUser"
+                android:layout_alignLeft="@+id/postCategory"
+                android:layout_alignStart="@+id/postCategory" />
+
+
+
+        </LinearLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
 
@@ -31,22 +69,148 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/postTitle"
-                android:text="Post Title goes here"
-                tools:textStyle="bold"
+                android:text="Descripcion_Reporte"
+                tools:textStyle="bold|italic"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:paddingBottom="15dp" />
+                android:paddingBottom="15dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/postTitle"
+                android:id="@+id/postDateLabel"
+                android:text="@string/post_date_label"
+                tools:textStyle="bold|italic"
+                android:textSize="10sp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postPlaceLabel"
+                android:text="@string/post_place_label"
+                tools:textStyle="bold|italic"
+                android:textSize="10sp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:layout_below="@id/postDateLabel"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postCategoryLabel"
+                android:text="@string/post_category_label"
+                tools:textStyle="bold|italic"
+                android:textSize="10sp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="25dp"
+                android:layout_below="@id/postPlaceLabel"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postTypeLabel"
+                android:text="@string/post_type_label"
+                tools:textStyle="bold|italic"
+                android:textSize="10sp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:layout_below="@id/postCategoryLabel"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postActorsLabel"
+                android:text="@string/post_actors_label"
+                tools:textStyle="bold|italic"
+                android:textSize="10sp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:layout_below="@id/postTypeLabel"
+                android:textStyle="bold|italic" />
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/postDesc"
-                android:text="The post description goes here"
+                android:id="@+id/postType"
+                android:text="Reporte_Tipo"
+                android:textSize="10sp"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:paddingBottom="15dp" />
+                android:paddingBottom="15dp"
+                android:layout_below="@+id/postCategoryLabel"
+                android:layout_toRightOf="@+id/postDateLabel"
+                android:layout_toEndOf="@+id/postDateLabel" />
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postActors"
+                android:textSize="10sp"
+                android:text="Reporte_Actores"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:layout_alignBaseline="@+id/postActorsLabel"
+                android:layout_alignBottom="@+id/postActorsLabel"
+                android:layout_alignLeft="@+id/postType"
+                android:layout_alignStart="@+id/postType" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:id="@+id/postCategory"
+                android:text="Reporte_Categoria"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="25dp"
+                android:layout_alignBaseline="@+id/postCategoryLabel"
+                android:layout_alignBottom="@+id/postCategoryLabel"
+                android:layout_alignLeft="@+id/postType"
+                android:layout_alignStart="@+id/postType" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/postDate"
+                android:text="Reporte_Date"
+                android:textSize="10sp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:layout_below="@+id/postTitle"
+                android:layout_toRightOf="@+id/postDateLabel"
+                android:layout_toEndOf="@+id/postDateLabel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/postPlace"
+                android:text="Reporte_Lugar"
+                android:textSize="10sp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:layout_below="@+id/postDate"
+                android:layout_alignLeft="@+id/postCategory"
+                android:layout_alignStart="@+id/postCategory" />
+
+
+        </RelativeLayout>
 
 
     </LinearLayout>

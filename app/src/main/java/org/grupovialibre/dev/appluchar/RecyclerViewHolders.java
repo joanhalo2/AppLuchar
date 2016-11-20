@@ -25,16 +25,31 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder{
     public Report report;
 
     public ImageView markIcon;
-    public TextView postTitle;
-    public TextView descTitle;
+
+    public TextView mPostDesc;
+    public TextView mPostPlace;
+    public TextView mPostDate;
+    public TextView mPostCategory;
+    public TextView mPostActors;
+    public TextView mPostType;
+    public TextView mPostUser;
+
 
     private List<Report> taskObject;
+
     public RecyclerViewHolders(final View itemView, final Context context,final List<Report> taskObject) {
         super(itemView);
         this.taskObject = taskObject;
-        postTitle = (TextView)itemView.findViewById(R.id.postTitle);
+
         markIcon = (ImageView)itemView.findViewById(R.id.postImage);
-        descTitle = (TextView)itemView.findViewById(R.id.postDesc);
+
+        mPostDesc = (TextView)itemView.findViewById(R.id.postTitle);
+        mPostPlace = (TextView)itemView.findViewById(R.id.postPlace);
+        mPostActors = (TextView)itemView.findViewById(R.id.postActors);
+        mPostCategory = (TextView)itemView.findViewById(R.id.postCategory);
+        mPostType = (TextView)itemView.findViewById(R.id.postType);
+        mPostDate = (TextView)itemView.findViewById(R.id.postDate);
+        mPostUser = (TextView)itemView.findViewById(R.id.postUser);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,13 +57,8 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder{
                 //finish();
                 if(report!=null){
                     Intent mIntent = new Intent(context, ReportActivity.class);
-
-
                     mIntent.putExtra("currentReport",report);
-
                     context.startActivity(mIntent);
-
-                    Toast.makeText(context,"Report clicked!",Toast.LENGTH_SHORT).show();
                 }
 
             }

@@ -9,124 +9,265 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="org.grupovialibre.dev.appluchar.PlaceholderFragment">
 
-    <TextView
-        android:text="Status"
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/labelType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sectionEdit"
+        android:layout_below="@+id/relSpinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/labelStatus" />
+        >
 
-    <EditText
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/typeEdit"
+            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/type_label"
+            android:inputType="textPersonName"
+
+            android:textSize="14sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/labelSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/sectionEdit"
+        android:layout_below="@+id/labelType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/sectionEdit"
+            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/section_category"
+            android:inputType="textPersonName"
+
+            android:textSize="14sp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/labelDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/labelSection"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        >
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/statusEdit"
-        android:layout_below="@+id/labelStatus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/dateEdit"
+            android:inputType="date"
+            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_date"
+            android:editable="false"
+            android:textSize="14sp"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:text="Section"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/labelSection"
-        android:layout_below="@+id/attendeesEdit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:text="Attendees"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/labelAttendees"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/attendeesEdit"
-        android:singleLine="false"
-        android:layout_below="@+id/labelAttendees"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/typeEdit"
-        android:layout_above="@+id/labelAttendees"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/labelType"
-        android:layout_above="@+id/typeEdit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/actorsEdit"
-        android:layout_above="@+id/labelType"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="Actors"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <android.support.design.widget.TextInputLayout
         android:id="@+id/labelActors"
-        android:layout_above="@+id/actorsEdit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/locationEdit"
-        android:layout_above="@+id/labelActors"
+        android:layout_below="@+id/labelDate"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:editable="false"
-        android:layout_toLeftOf="@+id/openMapButton"
-        android:layout_toStartOf="@+id/openMapButton"
-        android:textSize="12sp" />
+        >
 
-    <TextView
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/actorsEdit"
+            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/actors"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/labelDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/labelLocation"
-        android:text="Location"
-        android:layout_above="@+id/locationEdit"
+        android:layout_below="@+id/labelActors"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/descriptionEdit"
+            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/desc"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/labelTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelDesc"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/editTags"
+            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tags_label"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:padding="2dp"
+        android:id="@+id/locationRel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelLocation"
+            android:text="@string/location"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="@string/latitude"
+            android:id="@+id/locationLat"
+            android:editable="false"
+            android:textSize="12sp"
+            android:layout_alignBaseline="@+id/locationLng"
+            android:layout_alignBottom="@+id/locationLng"
+            android:layout_toRightOf="@+id/locationLng"
+            android:layout_toEndOf="@+id/locationLng"
+            android:digits="8"
+            android:singleLine="true" />
+
+        <EditText
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="@string/longitude"
+            android:id="@+id/locationLng"
+            android:editable="false"
+            android:textSize="12sp"
+            android:layout_below="@+id/labelLocation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:digits="8"
+            android:singleLine="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:textSize="12sp"
+            android:hint="@string/place"
+            android:id="@+id/LocationPlaceEdit"
+            android:layout_below="@+id/locationLng"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:ems="10"
+            app:srcCompat="@android:drawable/ic_menu_mylocation"
+            android:id="@+id/openMapButton"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_below="@+id/labelLocation"
+            android:layout_toRightOf="@+id/locationLat"
+            android:layout_toEndOf="@+id/locationLat" />
+
+    </RelativeLayout>
+
+
+    <!--<Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="@drawable/spinner_background"
+        android:spinnerMode="dialog"
+        android:id="@+id/typeSpinnerDialog"
+        android:padding="15dp"
+        android:layout_below="@+id/locationRel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />-->
+
+    <RelativeLayout
+        android:id="@+id/relSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/locationRel"
+        android:layout_weight=".28"
+        android:background="@drawable/spinner_background"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/typeSpinnerDialog"
+            android:padding="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:spinnerMode="dialog" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:src="@mipmap/drop" />
+
+    </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -136,18 +277,12 @@
         android:scaleType="center"
         app:srcCompat="@android:drawable/ic_menu_save"
         android:id="@+id/saveReportButton"
-        android:layout_margin="16dp"
         app:elevation="8dp"
+        android:layout_marginLeft="15dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_dialog_map"
-        android:id="@+id/openMapButton"
-        android:layout_above="@+id/labelActors"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
