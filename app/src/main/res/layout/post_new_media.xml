@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/relostImg"
+        android:layout_height="250dp">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/select_img_appluchar"
+            android:id="@+id/postMediaImageButton"
+            android:layout_margin="15dp"
+            android:scaleType="centerInside" />
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/input_new_media_photo"
+        android:textSize="12dp"
+        android:ems="10"
+        android:id="@+id/mediaDesctEditText"
+        android:layout_margin="15dp" />
+
+</LinearLayout>

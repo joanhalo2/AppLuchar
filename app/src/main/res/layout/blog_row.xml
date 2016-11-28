@@ -40,17 +40,19 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="92dp"
                 android:id="@+id/postUser"
                 android:text="Username"
                 android:textStyle="bold"
                 android:textSize="8sp"
                 android:paddingLeft="5dp"
+                android:singleLine="false"
                 android:paddingRight="5dp"
                 android:paddingBottom="5dp"
                 android:layout_below="@+id/postLabelUser"
                 android:layout_alignLeft="@+id/postCategory"
-                android:layout_alignStart="@+id/postCategory" />
+                android:layout_alignStart="@+id/postCategory"
+                />
 
 
 

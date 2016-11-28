@@ -1,20 +1,20 @@
 package org.grupovialibre.dev.appluchar;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.EditText;
 
-import com.firebase.client.core.Repo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -22,23 +22,26 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
+import org.grupovialibre.dev.appluchar.entities.Report;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class AccountActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private DatabaseReference mDatabaseReports;
+    //private DatabaseReference mDatabaseUserReports;
+    private Query mQueryCurrentUser;
     private RecyclerView mBlogList;
     private RecyclerViewAdapter recyclerViewAdapter;
-    private List<Report> reports;
+    private ArrayList<Report> reports;
 
 
 
@@ -50,10 +53,17 @@ public class AccountActivity extends AppCompatActivity {
         Toolbar my_toolbar  = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(my_toolbar);
 
+        mAuth = FirebaseAuth.getInstance();
+
         reports = new ArrayList<Report>();
         mDatabaseReports = FirebaseDatabase.getInstance().getReference().child("Reports");
 
-        mAuth = FirebaseAuth.getInstance();
+
+        String currentUserID = "";
+        if(mAuth.getCurrentUser()!=null){
+            currentUserID = mAuth.getCurrentUser().getUid();
+        }
+
 
         mBlogList = (RecyclerView) findViewById(R.id.blog_list);
         mBlogList.setHasFixedSize(true);
@@ -65,16 +75,21 @@ public class AccountActivity extends AppCompatActivity {
         }else{
 
             FirebaseUser user = mAuth.getCurrentUser();
-            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
 
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
-                    //System.out.println(dataSnapshot.getValue());
                     Map<String,String> map = (Map)dataSnapshot.getValue();
-                    String u_name  = map.get("username");
-                    getSupportActionBar().setTitle(u_name);
+
+                    if(map.get("username")!=null){
+                        String u_name  = map.get("username");
+                        getSupportActionBar().setTitle(u_name);
+                    }else{
+                        getSupportActionBar().setTitle(getResources().getString(R.string.error_user_name));
+                    }
+
                 }
 
                 @Override
@@ -131,6 +146,50 @@ public class AccountActivity extends AppCompatActivity {
 
     }
 
+    private void getUserReports(boolean onlyUser,String actorsFilter){
+        reports.clear();
+        String currentUserID = mAuth.getCurrentUser().getUid();
+        //mDatabaseUserReports = FirebaseDatabase.getInstance().getReference().child("Reports");
+
+        if(onlyUser){
+            mQueryCurrentUser = mDatabaseReports.orderByChild("userID").equalTo(currentUserID);
+        }else{
+            mQueryCurrentUser = mDatabaseReports.orderByChild("date");
+        }
+
+        if(actorsFilter!=null && !actorsFilter.isEmpty()){
+            mQueryCurrentUser = mDatabaseReports.orderByChild("actors").equalTo(actorsFilter);
+        }
+        //mQueryCurrentUser = mDatabaseUserReports.orderByChild("userID").equalTo(currentUserID);
+
+        mQueryCurrentUser.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                getAllReports(dataSnapshot);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                getAllReports(dataSnapshot);
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
 
     private void getAllReports(DataSnapshot dataSnapshot){
 
@@ -183,14 +242,29 @@ public class AccountActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.menu_1:
-                Toast.makeText(AccountActivity.this,"Option 1 clicked!",Toast.LENGTH_SHORT).show();
+                getUserReports(true, null);
+                //Toast.makeText(AccountActivity.this,"Option 1 clicked!",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.menu_2:
-                Toast.makeText(AccountActivity.this,"Option 2 clicked!",Toast.LENGTH_SHORT).show();
+                getUserReports(false, null);
+                //Toast.makeText(AccountActivity.this,"Option 2 clicked!",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.menu_3:
+                showChangeLangDialog();
+                break;
+
+            case R.id.menu_4:
+
+                //startActivity(new Intent(AccountActivity.this,ReportActivity.class));
+                finish();
+                Intent mIntent = new Intent(AccountActivity.this, CurrentReportsMapsActivity.class);
+                mIntent.putParcelableArrayListExtra("locations",reports);
+                startActivity(mIntent);
+                break;
+
+            case R.id.menu_quit:
                 logOut();
                 break;
 
@@ -198,6 +272,31 @@ public class AccountActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void showChangeLangDialog() {
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.custom_dialog, null);
+        dialogBuilder.setView(dialogView);
+
+        final EditText edt = (EditText) dialogView.findViewById(R.id.filterActorsEdit);
+
+        //edt.setText(""+PROXIMITY_RADIUS);
+
+        dialogBuilder.setPositiveButton(getResources().getString(R.string.boton_filtro_actores), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                getUserReports(false, edt.getText().toString());
+            }
+        });
+        dialogBuilder.setNegativeButton(getResources().getString(R.string.boton_filtro_actores_cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //pass
+            }
+        });
+        AlertDialog b = dialogBuilder.create();
+        b.show();
     }
 
     private void logOut(){

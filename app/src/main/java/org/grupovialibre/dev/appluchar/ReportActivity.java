@@ -2,7 +2,6 @@ package org.grupovialibre.dev.appluchar;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -13,20 +12,14 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-import android.widget.EditText;
-
-import com.firebase.client.core.Repo;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import org.grupovialibre.dev.appluchar.Report;
+import org.grupovialibre.dev.appluchar.entities.Report;
+import org.grupovialibre.dev.appluchar.tabs.PlaceholderFragment;
 
 public class ReportActivity extends AppCompatActivity {
 

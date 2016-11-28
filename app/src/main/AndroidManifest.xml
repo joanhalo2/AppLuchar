@@ -8,7 +8,10 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".FireApp"
@@ -45,13 +48,13 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".RegisterActivity" />
         <activity
-            android:name=".RegisterReportActivity"
-            android:label="@string/title_activity_register_report"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ReportActivity"
             android:label="@string/title_activity_report"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".CurrentReportsMapsActivity"
+            android:label="@string/title_activity_current_reports_maps"></activity>
     </application>
 
 </manifest>

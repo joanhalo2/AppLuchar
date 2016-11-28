@@ -6,20 +6,21 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="my_toolbar_title">Welcome User </string>
     <string name="my_tb_subtitle">Bienvenido/a</string>
-    <string name="menu_1">Menu1</string>
-    <string name="menu_2">Menu2</string>
-    <string name="menu_3">Log Out</string>
+    <string name="menu_1">Mis reportes</string>
+    <string name="menu_2">Todos los reportes</string>
+    <string name="menu_3">Buscar reporte ...</string>
+    <string name="menu_quit">Salir</string>
     <string name="title_activity_report">ReportActivity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="basic_info">Basic Info</string>
-    <string name="hh_rr">HHRR</string>
-    <string name="report_resources">Resources</string>
-    <string name="register_succesfull">Registered Successfully</string>
-    <string name="register_failed">Could not register. PLease try again</string>
-    <string name="location_msg">Location!</string>
-    <string name="saving_report">Saving New Report ...</string>
+    <string name="basic_info">Inf.Básica</string>
+    <string name="hh_rr">DDHH</string>
+    <string name="report_resources">Recursos</string>
+    <string name="register_succesfull">Registro realizado satisfactoriamente</string>
+    <string name="register_failed">Error en el registros. Por favor intentelo nuevamente</string>
+    <string name="location_msg">Ubicación</string>
+    <string name="saving_report">Guardando el reporte ...</string>
     <string name="location">Ubicación</string>
     <string name="latitude">Latitud</string>
     <string name="longitude">Longitud</string>
@@ -57,6 +58,19 @@
     <string name="post_type_label">Tipo:</string>
     <string name="post_actors_label">Actores:</string>
     <string name="creator">Creado por:</string>
+    <string name="filter_actors">Ingrese el nombre de la organización</string>
+    <string name="boton_filtro_actores">Buscar</string>
+    <string name="boton_filtro_actores_cancel">Cancelar</string>
+    <string name="deleting_report">Deleting report ...</string>
+    <string name="denunciation_text_input">Ingrese el texto de la denuncia</string>
+    <string name="denunciation_type">Tipo:</string>
+    <string name="boton_denuncia_agregar">Agregar</string>
+    <string name="input_new_media_photo">Ingrese un comentario para la imagen</string>
+    <string name="send_media">Enviar</string>
+    <string name="image_desc_requiered">Por favor ingrese una descripción para la imagen</string>
+    <string name="set_location">Establecer ubicación</string>
+    <string name="menu_4">Mapa de reportes</string>
+
 
     <string-array name="action_type_spinner_options">
         <item name="no_selection"> Seleccione un tipo de acción</item>
@@ -65,4 +79,29 @@
         <item name="acto_cultural">ACTO CULTURAL</item>
         <item name="jornada_pedagogica"> JORNADA PEDAGOGICA</item>
     </string-array>
+
+
+    <string-array name="denunciation_type_spinner_options">
+        <item name="agresion_policial"> Agresión Fuerza Pública</item>
+        <item name="detencion"> Detención arbitraria</item>
+        <item name="agresion_medios">Agresión a medios de comunicación</item>
+        <item name="amenazas">Amenazas e intimidaciones</item>
+        <item name="seguimiento">Seguimiento ilegal</item>
+    </string-array>
+    <string name="title_activity_current_reports_maps">Reportes</string>
+    <string name="register_button">Registrarse</string>
+    <string name="nueva_cuenta">Registrar nueva cuenta</string>
+    <string name="image_save_first">Por favor introduzca primero la Información básica del reporte</string>
+    <string name="username_hint">Nombre de usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="login_label">Ingresar</string>
+    <string name="delete_report_title">Eliminar Reporte</string>
+    <string name="delete_report_ask">¿Realmente desea eliminar el reporte?</string>
+    <string name="delete_report_ok">Borrar</string>
+    <string name="delete_report_cancel">Cancelar</string>
+    <string name="error_user_name">No se encontro nombre de usuario</string>
+    <string name="required_field">El campo es requerido</string>
+    <string name="complete_report_fields">Complete los campos faltantes</string>
+
 </resources>

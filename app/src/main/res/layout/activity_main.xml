@@ -15,6 +15,7 @@
 
     <LinearLayout
         android:orientation="vertical"
+        android:id="@+id/loginFields"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -51,7 +52,7 @@
             android:padding="15dp" />
 
         <Button
-            android:text="LOGIN"
+            android:text="@string/login_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/passwordField"
@@ -63,13 +64,14 @@
             android:textSize="20sp" />
 
         <TextView
-            android:text="Register New Account"
+            android:text="@string/nueva_cuenta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/loginButton"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:id="@+id/registerTextURL"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textAlignment="center" />
 
     </LinearLayout>
@@ -79,11 +81,19 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="false"
         android:scaleType="fitCenter"
-        android:id="@+id/imageView4"
+        android:id="@+id/appLucharTypo"
         android:cropToPadding="false"
         android:saveEnabled="false"
         android:background="@drawable/appluchar_typo2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
+        android:layout_above="@+id/loginFields"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_launcher_accent"
+        android:id="@+id/imageView"
+        android:layout_above="@+id/appLucharTypo"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

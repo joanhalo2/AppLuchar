@@ -10,8 +10,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:padding="20dp"
-    android:background="?attr/colorPrimary"
+    android:background="?attr/colorAccent"
     tools:context="org.grupovialibre.dev.appluchar.RegisterActivity">
+
+    <ImageView
+        android:layout_width="150dp"
+        app:srcCompat="@drawable/appluchar_icon2"
+        android:id="@+id/imageViewRegister"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="150dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -19,27 +27,40 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/registerEmailField"
-        android:hint="E-mail"
-        android:layout_alignParentTop="true"
+        android:hint="@string/email_hint"
         android:background="@drawable/input_background"
+        android:padding="15dp"
+        android:layout_above="@+id/registerPasswordField"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="128dp"
-        android:padding="15dp" />
+        android:layout_marginBottom="13dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_marginTop="23dp"
         android:background="@drawable/input_background"
         android:id="@+id/registerPasswordField"
-        android:hint="Password"
-        android:layout_below="@+id/registerEmailField"
+        android:hint="@string/password_hint"
+        android:padding="15dp"
+        android:layout_alignBottom="@+id/registerUserNameText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:padding="15dp" />
+        android:layout_marginBottom="71dp" />
+
+    <Button
+        android:text="@string/register_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerButton"
+        android:background="@drawable/button_background_accent"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:layout_marginBottom="22dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="match_parent"
@@ -48,32 +69,11 @@
         android:ems="10"
         android:id="@+id/registerUserNameText"
         android:background="@drawable/input_background"
-        android:hint="UserName"
-        android:layout_marginTop="25dp"
-        android:layout_below="@+id/registerPasswordField"
+        android:hint="@string/username_hint"
+        android:padding="15dp"
+        android:layout_marginBottom="25dp"
+        android:layout_above="@+id/registerButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:padding="15dp" />
-
-    <Button
-        android:text="REGISTER"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:id="@+id/registerButton"
-        android:background="@drawable/button_background"
-        android:layout_below="@+id/registerUserNameText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:srcCompat="@drawable/appluchar_icon2"
-        android:id="@+id/imageViewRegister"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

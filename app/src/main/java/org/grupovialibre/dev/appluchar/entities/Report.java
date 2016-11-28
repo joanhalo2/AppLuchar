@@ -1,4 +1,4 @@
-package org.grupovialibre.dev.appluchar;
+package org.grupovialibre.dev.appluchar.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -16,17 +16,17 @@ public class Report implements Parcelable{
 
 
 
-    public String reportID;
-    public String userID;
-    public String location;
-    public String place;
-    public String actors;
-    public String type;
-    public String section;
-    public String date;
-    public String tags;
-    public String description;
-    public String userName;
+    private String reportID;
+    private String userID;
+    private String location;
+    private String place;
+    private String actors;
+    private String type;
+    private String section;
+    private String date;
+    private String tags;
+    private String description;
+    private String userName;
 
 
 

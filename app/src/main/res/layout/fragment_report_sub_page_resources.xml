@@ -2,12 +2,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="layout.ReportSubPageResources">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".tabs.ReportSubPageResources">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ListView
+        android:id="@+id/mediaListView"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"
+        android:padding="15dp">
+
+
+    </ListView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RECURSOS" />
+        android:clickable="true"
+        android:scaleType="center"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_camera_white_36dp"
+        android:id="@+id/newCameraMediaButton"
+        app:elevation="24dp"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="16dp"
+        app:rippleColor="?attr/colorPrimary" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:scaleType="center"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_image_white_36dp"
+        android:id="@+id/newGalleryMediaButton"
+        app:elevation="24dp"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="16dp"
+        app:rippleColor="?attr/colorPrimary" />
 
 </FrameLayout>

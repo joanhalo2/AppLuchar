@@ -61,13 +61,13 @@ public class RegisterActivity extends AppCompatActivity {
         final String username = mUserNameField.getText().toString();
 
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Please enter email",Toast.LENGTH_SHORT).show();;
+            Toast.makeText(this,"Please enter email",Toast.LENGTH_SHORT).show();
 
             return;
         }
 
         if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Please enter password",Toast.LENGTH_SHORT).show();;
+            Toast.makeText(this,"Please enter password",Toast.LENGTH_SHORT).show();
 
             return;
         }

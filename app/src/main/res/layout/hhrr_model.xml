@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relDenCardView"
+        android:padding="5dp">
+
+        <TextView
+            android:text="DateTime - HHSS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:ems="10"
+            android:textSize="10sp"
+            android:id="@+id/dateTimeField" />
+
+        <TextView
+            android:text="Creado por : ZZZZZZZZZZ"
+            android:layout_below="@id/dateTimeField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:elevation="10dp"
+            android:ems="10"
+            android:textSize="12sp"
+            android:padding="10dp"
+            android:id="@+id/denunciationUserField"
+            android:textStyle="normal|bold|italic" />
+
+        <TextView
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tortor eros, dictum sed facilisis eu, dignissim non tortor. Vivamus dignissim maximus accumsan. Maecenas at justo ut erat bibendum sollicitudin in in dolor. Pellentesque a massa at urna tristique ultrices id sit amet est. Nunc suscipit nibh at lorem placerat pellentesque. Integer cursus et nunc quis placerat. Etiam non nisi vel tellus lacinia suscipit at sed neque. Praesent nec sem vulputate, consequat felis sit amet, rutrum sem. Ut tempor massa diam, ut lobortis purus accumsan sollicitudin. Integer eu posuere velit. Vivamus eleifend aliquam erat, eget faucibus libero viverra nec. In at elit lectus. Cras tristique eget orci at malesuada. Maecenas risus augue, dapibus eget tristique ornare, iaculis in est. Pellentesque ac arcu id tellus volutpat pretium. "
+            android:layout_below="@id/denunciationUserField"
+            android:layout_width="match_parent"
+            android:ems="10"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/denuncationCorpseField" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

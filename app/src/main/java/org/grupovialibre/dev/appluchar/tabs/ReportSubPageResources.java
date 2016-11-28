@@ -1,4 +1,4 @@
-package layout;
+package org.grupovialibre.dev.appluchar.tabs;
 
 import android.content.Context;
 import android.net.Uri;

@@ -3,13 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="layout.ReportSubPageHHRR">
+    tools:context=".tabs.ReportSubPageHHRR">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+
+    <ListView
+        android:id="@+id/hhrrListView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DDHH" />
+        android:padding="15dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp"
+        >
+
+
+    </ListView>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -17,8 +25,8 @@
         android:clickable="true"
         android:scaleType="center"
         app:fabSize="normal"
-        app:srcCompat="@android:drawable/ic_dialog_email"
-        android:id="@+id/floatingActionButton"
+        app:srcCompat="@drawable/ic_comment_alert_outline_white_36dp"
+        android:id="@+id/newDenunciationButton"
         app:elevation="8dp"
         android:layout_gravity="bottom|center"
         android:layout_margin="16dp" />

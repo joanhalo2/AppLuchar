@@ -1,4 +1,4 @@
-package layout;
+package org.grupovialibre.dev.appluchar.tabs;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,8 +7,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import org.grupovialibre.dev.appluchar.R;
+import org.grupovialibre.dev.appluchar.entities.Denunciation;
+import org.grupovialibre.dev.appluchar.mListView.HHRRCustomAdapter;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +24,7 @@ import org.grupovialibre.dev.appluchar.R;
  * Use the {@link ReportSubPageHHRR#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ReportSubPageHHRR extends Fragment {
+public class  ReportSubPageHHRR extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -65,8 +71,33 @@ public class ReportSubPageHHRR extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report_sub_page_hhrr, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_report_sub_page_hhrr, container, false);
+        ListView listView = (ListView) rootView.findViewById(R.id.hhrrListView);
+        HHRRCustomAdapter adapter = new HHRRCustomAdapter(this.getActivity(),getDenunciations());
+        listView.setAdapter(adapter);
+        return rootView;
     }
+
+    private ArrayList<Denunciation> getDenunciations(){
+
+        ArrayList<Denunciation> denunciations = new ArrayList<Denunciation>();
+
+        Denunciation mockDen = new Denunciation();
+        mockDen.setCorpse("XXXXXXXXXXXXXXXXX");
+        mockDen.setDateTime("textoX");
+        mockDen.setTitle("tituloX");
+        denunciations.add(mockDen);
+
+
+        Denunciation mockDen2 = new Denunciation();
+        mockDen2.setCorpse("QQQQQQQQQQQQQQQQQQ");
+        mockDen2.setDateTime("texto3");
+        mockDen2.setTitle("titulo3");
+        denunciations.add(mockDen2);
+
+        return  denunciations;
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -105,5 +136,11 @@ public class ReportSubPageHHRR extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    @Override
+    public String toString() {
+        String title = "Denunciations";
+        return title;
     }
 }
