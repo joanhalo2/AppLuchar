@@ -15,7 +15,9 @@ Noviembre 2016
 
 # DOCUMENTACIÓN
 
-[Articulo - formato IEEE](documentacion/more_words.md)
-[Poster](documentacion/more_words.md)
-[Presentación](documentacion/more_words.md)
+[Articulo - formato IEEE](documentacion/reporteIEEE_AppLuchar.pdf)
+
+[Poster](documentacion/poster_appLuchar.pdf)
+
+[Presentación](documentacion/presentacionFinal_AppLuchar.pdf)
 
